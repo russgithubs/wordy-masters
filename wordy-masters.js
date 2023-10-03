@@ -24,7 +24,7 @@ async function init() {
     if (currentGuess.length < ANSWER_LENGTH) {
       currentGuess += letter;
     } else {
-      current = currentGuess.substring(0, currentGuess.length - 1) + letter;
+      currentGuess = currentGuess.substring(0, currentGuess.length - 1) + letter;
     }
 
     letters[currentRow * ANSWER_LENGTH + currentGuess.length - 1].innerText =
@@ -145,25 +145,25 @@ async function init() {
   });
 }
 
-  // Add touch event listeners
-  document.addEventListener("touchstart", function handleTouchStart(event) {
-    // Handle touch events here
-    // You can determine which element was touched and take action accordingly
-    // For example, if a virtual keyboard button is touched, you can simulate key presses
-    // Here's a general example:
-    
-    // Get the touched element
-    const touchedElement = event.target;
+// Add touch event listeners
+document.addEventListener("touchstart", function handleTouchStart(event) {
+  // Handle touch events here
+  // You can determine which element was touched and take action accordingly
+  // For example, if a virtual keyboard button is touched, you can simulate key presses
+  // Here's a general example:
+  
+  // Get the touched element
+  const touchedElement = event.target;
 
-    // Check if the touched element represents a virtual keyboard button (customize this part)
-    if (touchedElement.classList.contains("virtual-keyboard-button")) {
-      // Get the key value from the touched element (customize this part)
-      const key = touchedElement.innerText;
-      
-      // Simulate a key press by calling your addLetter function with the key
-      addLetter(key.toUpperCase()); // Assuming you have an addLetter function
-    }
-  });
+  // Check if the touched element represents a virtual keyboard button (customize this part)
+  if (touchedElement.classList.contains("virtual-keyboard-button")) {
+    // Get the key value from the touched element (customize this part)
+    const key = touchedElement.innerText;
+    
+    // Simulate a key press by calling your addLetter function with the key
+    addLetter(key.toUpperCase()); // Assuming you have an addLetter function
+  }
+});
 
 // ... (rest of your code)
 
